@@ -1,0 +1,84 @@
+
+.banner {
+    --banner-height: 50vh;
+    position: relative;
+    color: var(--c-text-alt);
+    background: var(--c-bg-alt);
+    overflow: hidden;
+}
+
+.banner--home {
+    --banner-height: 100vh;    
+    z-index: 1;
+
+    .banner__body {
+        @include media($bp-large) {
+            transform: rotate(10deg);
+            height: 130vh;
+            width: 110vw;
+            margin: -15vh -5vw -15vh;
+        }
+    }
+}
+
+.banner__body {
+    min-height: var(--banner-height);
+}
+
+.banner__heading {
+    align-self: end;
+    padding: var(--s-6);
+    position: relative;
+    z-index: 3;
+
+    // @include media($bp-large) {
+    //     padding: var(--s-6) 0 var(--s6) var(--s-6);
+    // }
+}
+
+.banner__heading-part {
+    display: block;
+    line-height: 1.1;
+}
+
+.banner__heading-part--main {
+    font-size: clamp(
+        var(--f-xx-large),
+        10vmin,
+        var(--f-xxx-large)
+    );
+}
+
+.banner__heading-part--sub {
+    font-size: clamp(var(--f-large), 6vmin, var(--f-xx-large));
+}
+
+.banner__heading-text {
+    position: relative;
+    z-index: 1;
+}
+
+
+.banner__message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    background: var(--c-yellow);
+    display: flex;
+    justify-content: center;
+    padding: var(--s-3);
+    // border-bottom: solid var(--c-bg-alt) rem($line-thickness);
+    
+    p {
+        color: var(--c-text);
+        font-size: var(--f-small);
+        font-weight: 700;
+        text-align: center;
+
+        @include media($bp-med) {
+            font-size: var(--f-large);
+        }
+    }
+}

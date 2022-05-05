@@ -1,0 +1,76 @@
+.grid--banner {
+    height: 100%;
+    grid-template-columns: auto 50px rem($line-thickness) 50px 1fr;
+    grid-template-rows: 6.5rem rem($line-thickness) 1fr rem(50) rem($line-thickness) rem(50) 0.25fr;
+    grid-gap: rem($root-font-size * $font-line-height);
+    transition: all 0.3s linear;
+
+    @include media($bp-med) {
+        grid-template-columns: auto rem(80) rem($line-thickness) rem(80) 1fr;
+        grid-template-rows: rem(116) rem($line-thickness) 1fr rem(80) rem($line-thickness) rem(80) 0.5fr;
+    }
+
+    @include media($bp-large) {
+        grid-template-columns: 1fr rem(150) rem($line-thickness) rem(150) auto 1fr 1fr rem($line-thickness) 1fr;
+        grid-template-rows: minmax(#{rem(100)}, 1fr) rem($line-thickness) rem(75) rem(150) rem($line-thickness) rem(150) rem($line-thickness) 0.5fr;
+    }
+    
+    .grid__heading {
+        @include grid-position("4/6", "2/5" );
+        align-self: end;
+        @include padding($font-line-height);
+        position: relative;
+        z-index: 3;
+
+        @include media($bp-large) {
+            @include grid-position("4/6", "3/5")
+        }
+    }
+
+    .grid__line--h-1 {
+        @include grid-position("1/4", 2);
+
+        @include media($bp-large) {
+            @include grid-position("1/-1", 5);
+        }
+    }
+
+    .grid__line--h-2 {
+        @include grid-position("1/9", 5);
+
+        @include media($bp-large) {
+            @include grid-position("1/4", 7);
+        }
+    }
+
+    .grid__line--h-3 {
+        display: none;
+
+        @include media($bp-large) {
+            display: block;
+            @include grid-position("5/9", 2);
+        }
+
+        @include media($bp-largest) {
+            @include grid-position("6/9", 2);
+        }
+    }
+
+    .grid__line--v-1 {
+        @include grid-position(3, "1/-1");
+    }
+
+    .grid__line--v-2 {
+        @include grid-position(8, "1/-1");
+    }
+
+    .grid__circle {
+        @include grid-position("2/5", "4/7");
+
+        @include media($bp-large) {
+            @include grid-position("2/5", "4/7");
+        }
+    }
+
+    
+}

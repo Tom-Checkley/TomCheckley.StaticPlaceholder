@@ -1,0 +1,22 @@
+.triangle {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 85vmin;
+        height: 85vmin;
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 0 0);
+        background-color: rgba($blue-dark, 0.8);
+
+        @include media($bp-small) {
+            width: 65vmin;
+            height: 65vmin;
+        }
+
+        @include media($bp-med) {
+            width: 45vmin;
+            height: 45vmin;
+        }
+    }
+}
