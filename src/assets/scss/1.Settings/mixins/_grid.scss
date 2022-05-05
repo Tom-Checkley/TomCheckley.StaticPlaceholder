@@ -1,0 +1,26 @@
+@mixin grid-laylout($columns: null, $rows: null, $gap: null) {
+    @if ($columns) {
+        grid-template-columns: $columns;
+    }
+    @if ($rows) {
+        grid-template-rows: $rows;
+    }
+    @if ($gap) {
+        gap: $gap;
+    }
+}
+
+@mixin grid-position($column: null, $row: null) {
+    @if ($column) {
+        @if (type-of($column) == string) {
+            $column: unquote($column);
+        }
+        grid-column: $column;
+    }
+    @if ($row) {
+        @if (type-of($row) == string) {
+            $row: unquote($row);
+        }
+        grid-row: $row;
+    }
+}

@@ -1,0 +1,27 @@
+/// Return rem value for any given property (default is font-size)
+/// @TODO:  make $pixels into optional array, for use with 1+ arguments
+@mixin pxrem ($pixels, $property: null) {
+	@if $pixels and is-zeroauto($pixels) or is-length($pixels) {
+			@if $property {
+					#{$property}: $pixels;
+			}
+
+			@else {
+					font-size: $pixels;
+			}
+	}
+
+	@else if is-number($pixels) and unitless($pixels) {
+			@if $property {
+					#{$property}: rem($pixels);
+			}
+
+			@else {
+					font-size: rem($pixels);
+			}
+	}
+
+	@else {
+			@error "Must provide a unitless number to PXREM: `#{$pixels}` `#{$property}`";
+	}
+}

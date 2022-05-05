@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'open_sansregular';
+	src: url('../fonts/Open-Sans/opensans-regular-webfont.woff2') format('woff2'),
+			 url('../fonts/Open-Sans/opensans-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'open_sansbold';
+	src: url('../fonts/Open-Sans/opensans-bold-webfont.woff2') format('woff2'),
+			 url('../fonts/Open-Sans/opensans-bold-webfont.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'baumans';
+	src: url('../fonts/Baumans/baumans-regular-webfont.woff2') format('woff2'),
+			 url('../fonts/Baumans/baumans-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

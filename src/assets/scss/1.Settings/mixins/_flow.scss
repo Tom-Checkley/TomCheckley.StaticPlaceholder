@@ -1,0 +1,5 @@
+@mixin flow($font-size: $root-font-size, $line-height: $font-line-height) {
+    & > * + * {
+        @include margin-top(($font-size * $line-height));
+    }
+}

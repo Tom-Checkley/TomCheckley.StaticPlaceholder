@@ -1,0 +1,20 @@
+$black: #080808;
+$white: #f7f7f7;
+$grey: #cacae4;
+$blue: #4e9af9;
+$blue-dark: #28407d;
+$yellow: #e6b500;
+$red: #d2241a;
+
+$colors: (
+    "black": $black,
+    "white": $white,
+    "blue": $blue,
+    "blue-dark": $blue-dark,
+    "grey": $grey,
+    "yellow": $yellow,
+    "red": $red
+);
+
+$color-dark: $black;
+$color-light: $white;

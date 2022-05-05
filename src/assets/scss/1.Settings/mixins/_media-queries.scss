@@ -1,0 +1,25 @@
+/// @param { string } $bp - break point;
+/// @param { string } $orientation - screen orientation;
+/// @param { string } $minMax - min or max width;
+@mixin media($bp, $orientation: null, $minMax: null) {
+	@if $minMax and $orientation {
+		@media screen and (#{$minMax}-width: #{$bp}px) and (orientation: $orientation) {
+			@content;
+		}
+	}
+	@else if $minMax and not $orientation {
+		@media screen and (#{$minMax}-width: #{$bp}px) {
+			@content;
+		}
+	}
+	@else if $orientation and not $minMax {
+		@media screen and (min-width: #{$bp}px) and (orientation: $orientation) {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (min-width: #{$bp}px) {
+			@content;
+		}
+	}
+}

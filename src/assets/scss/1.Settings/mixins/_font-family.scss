@@ -1,0 +1,8 @@
+@mixin font-family($font: null, $font-family: $font-family-sans-serif) {
+	@if $font {
+		font-family: $font, $font-family;
+	}
+	@else {
+		font-family: $font-family;
+	}
+}

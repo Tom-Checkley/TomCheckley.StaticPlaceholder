@@ -1,0 +1,122 @@
+/// Test if `$value` is a number or `auto` - used on margins
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-zeroauto($value) {
+	@return $value == 0 or $value == "auto";
+}
+
+/// Test if `$value` is a number or `auto` - used on margins
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-numberauto($value) {
+	@return is-number($value) or is-zeroauto($value);
+}
+
+/// Test if `$value` is a number
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-number($value) {
+	@return type-of($value) == 'number';
+}
+
+/// Test if `$value` is of a timed duration
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-time($value) {
+	@return is-number($value) and index('ms' 's', unit($value)) != null;
+}
+
+/// Test if `$value` is of a timed duration
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-duration($value) {
+	@return is-time($value);
+}
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-angle($value) {
+	@return is-number($value) and index('deg' 'rad' 'grad' 'turn', unit($value)) != null;
+}
+
+/// Test if `$value` is a frequency
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-frequency($value) {
+	@return is-number($value) and index('Hz' 'kHz', unit($value)) != null;
+}
+
+/// Test if `$value` is an integer
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-integer($value) {
+	@return is-number($value) and round($value) == $value;
+}
+
+/// Test if `$value` is of a relative length
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-relative-length($value) {
+	@return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+}
+
+/// Test if `$value` is of an absolute length
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-absolute-length($value) {
+	@return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}
+
+/// Test if `$value` is a percentage
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-percentage($value) {
+	@return is-number($value) and unit($value) == '%';
+}
+
+/// Test if `$value` is a length (relative or absolute) in units
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-length($value) {
+	@return is-relative-length($value) or is-absolute-length($value);
+}
+
+/// Test if `$value` is a resolution with a unit (eg, dpi)
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-resolution($value) {
+	@return is-number($value) and index('dpi' 'dpcm' 'dppx', unit($value)) != null;
+}
+
+/// Test if `$value` is a valid position
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-position($value) {
+	@return is-length($value) or is-percentage($value) or index('top' 'right' 'bottom' 'left' 'center', $value) != null;
+}
+
+/// Test if `$value` is a valid direction
+/// @param {*} $value - Value to test
+/// @return {Bool}
+/// @access public
+@function is-direction($value) {
+	$is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+	$is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+	@return $is-keyword or $is-angle;
+}

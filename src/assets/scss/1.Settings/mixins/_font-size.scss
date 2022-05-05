@@ -1,0 +1,10 @@
+@mixin font-size($size: $base-font-size, $line-height: $font-line-height) {
+	@if unitless($size) {
+		font-size: #{$size}px;
+	}
+	@else {
+		font-size: $size;
+	}
+	font-size: rem($size);
+	line-height: $line-height;
+}

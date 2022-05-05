@@ -1,0 +1,21 @@
+:root {
+    // Colors
+    @each $color, $hex in $colors {
+        --c-#{$color}: #{$hex};
+    }
+
+    --c-text: var(--c-black);
+    --c-text-alt: var(--c-white);
+    --c-bg: var(--c-white);
+    --c-bg-alt: var(--c-black);
+
+    // Spacing
+    @each $identifier, $val in $spacing {
+        --s-#{$identifier}: #{rem($val * $root-font-size)};
+    }
+
+    @each $font-size, $val in $font-sizes {
+        --f-#{$font-size}: #{rem($val)};
+    }
+    --root-font-size: #{$font-size-med}px;
+}
