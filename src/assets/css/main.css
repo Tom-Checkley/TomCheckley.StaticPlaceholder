@@ -327,7 +327,7 @@ img {
     grid-row: 2;
   }
 }
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 1400px) {
   .grid--banner .grid__line--h-3 {
     grid-column: 6/9;
     grid-row: 2;

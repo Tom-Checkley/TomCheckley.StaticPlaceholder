@@ -51,7 +51,7 @@
             @include grid-position("5/9", 2);
         }
 
-        @include media($bp-largest) {
+        @include media($bp-larger) {
             @include grid-position("6/9", 2);
         }
     }
