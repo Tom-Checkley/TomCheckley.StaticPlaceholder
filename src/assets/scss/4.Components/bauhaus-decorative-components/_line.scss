@@ -1,0 +1,33 @@
+.line {
+    position: relative;
+    z-index: 1;
+    background: var(--line-color);
+    width: 100%;
+    height: 100%;
+
+    .banner & {
+        --line-color: var(--c-bg);
+    }
+
+    .content & {
+        --line-color: var(--c-bg-alt);
+    }
+}
+
+.line--circle {
+    .line__circle {
+        display: block;
+        background: var(--c-bg);
+        position: absolute;
+        top: 50%;
+        height: rem(56);
+        width: rem(56);
+        border-radius: 50%;
+
+        &--left {           
+            left: 0;
+            transform: translate(-85%, -50%);            
+        }
+    }
+
+}
