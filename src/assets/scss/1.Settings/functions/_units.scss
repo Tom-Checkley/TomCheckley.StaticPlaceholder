@@ -1,0 +1,83 @@
+@use 'sass:math';
+
+/// Take a list of values, add to a Map keeping their units (or 0 or auto)
+/// If no units, assumes it's REM's with PX fallback
+/// @param {list} $values - 10 auto 5vh 7.3% => 10px auto 5vh 7.3%, 10rem auto 5vh 7.3%
+/// @param {unit} $unit - Unit to add to value
+@function unitmap($values, $unit: rem) {
+
+	$ValuesMap: ();
+
+	@each $value in $values {
+			@if $value and is-zeroauto($value) or is-length($value) or is-percentage($value) {
+					$ValuesMap: append($ValuesMap, $value);
+			}
+
+			@else if $value and is-number($value) and unitless($value) {
+					@if $unit == "rem" {
+							$ValuesMap: append($ValuesMap, rem($value));
+					}
+
+					@else {
+							$ValuesMap: append($ValuesMap, px($value));
+					}
+			}
+	}
+
+	@return $ValuesMap;
+}
+
+/// Strip Unit
+/// @param { number } - $value
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+			@return math.div($number,  ($number * 0 + 1));
+	}
+	@return $number;
+}
+
+/// Return a value either %, auto or unitless
+/// @param { number || auto } - $value;
+
+@function value($value) {
+	@if is-number($value) and $value != 0 {
+
+		@if(unit($value) == '%') {
+			@return $value;
+		}
+		@else {
+			@return strip-unit($value);
+		}
+	}
+	@else if($value == 0) {
+		@return 0;
+	}
+	@else if($value == auto) {
+		@return auto;
+	}
+	@else {
+		@error "#{$value} is not a number or auto.";
+	}
+}
+
+
+/// Convert unit to rem
+/// @param { number } - value;
+/// @param { numebr : base-font-size } - font-size;
+@function rem($value, $font-size: $root-font-size) {
+	@if is-number($value) and $value != 0 {
+			@return (math.div($value, $font-size)) * 1rem;
+	}
+
+	@else if $value == 0 {
+			@return 0;
+	}
+
+	@else if $value == "auto" {
+			@return $value;
+	}
+
+	@else {
+			@error "Value was `#{$value}` not a number, zero or auto while converting to REM";
+	}
+}

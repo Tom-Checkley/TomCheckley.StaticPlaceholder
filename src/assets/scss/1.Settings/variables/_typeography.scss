@@ -1,0 +1,32 @@
+$main-font: "open_sansregular";
+$header-font: "baumans";
+
+$font-serif: "Times New Roman", Times, serif;
+$font-sans-serif: Arial, Helvetica, sans-serif;
+
+$font-size-smallest: 10;
+$font-size-smaller: 12;
+$font-size-small: 14;
+$font-size-med: 16;
+$font-size-large: 18;
+$font-size-larger: 24;
+$font-size-x-large: 32;
+$font-size-xx-large: 48;
+$font-size-xxx-large: 96;
+
+$font-sizes: (
+    smallest: $font-size-smallest,
+    smaller: $font-size-smaller,
+    small: $font-size-small,
+    med: $font-size-med,
+    large: $font-size-large,
+    larger: $font-size-larger,
+    x-large: $font-size-x-large,
+    xx-large: $font-size-xx-large,
+    xxx-large: $font-size-xxx-large
+);
+
+$font-line-height: 1.5;
+
+$root-font-size: $font-size-med;
+$root-line-height: $root-font-size * $font-line-height;
