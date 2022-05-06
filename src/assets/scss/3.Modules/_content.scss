@@ -1,0 +1,37 @@
+.content {
+    position: relative;
+}
+
+.content__heading {    
+    padding: var(--s-6);
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include media($bp-medLg) {
+        position: sticky;
+        top: 0;
+        mix-blend-mode: difference;
+    }
+    
+    h2 {        
+        font-size: clamp(#{rem(72)}, 20vmin, #{rem(126)});
+        line-height: 1;       
+
+        @include media($bp-medLg) {
+            position: sticky;
+            top: var(--s-6);
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            text-align: right;
+            color: $white;
+        }
+    }
+}
+
+.content__subheading {
+    font-size: var(--f-x-large);
+}
+
+.content__section {
+    padding: var(--s-6);
+}
