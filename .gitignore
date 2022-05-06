@@ -103,6 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
-# OSX files
+# OS/IDE Genetated files
 .DS_Store
+.vs
 
