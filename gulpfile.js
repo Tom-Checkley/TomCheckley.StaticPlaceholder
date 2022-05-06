@@ -10,6 +10,7 @@ const fibers = require("fibers");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
+const imagemin = require("gulp-imagemin");
 const del = require("del");
 const browsersync = require("browser-sync").create();
 const argv = require("yargs").argv;
@@ -57,6 +58,12 @@ function copyFonts() {
     return gulp.src("./src/assets/fonts/**/*.*")
         .pipe(gulp.dest("./dist/assets/fonts/"))
         .pipe(browsersync.stream());
+}
+
+function copyImages() {
+    return gulp.src("./src/assets/images/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("./dist/assets/images/"));
 }
 
 function compileSassDev() {
@@ -137,7 +144,7 @@ const dev = gulp.parallel(compileSassDev, minifyScriptsDev, init, watcher);
 
 const prod = gulp.series(
     cleanDist,
-    gulp.parallel(copyHtml, copyFonts, compileSassProd, minifyScriptsProd),
+    gulp.parallel(copyHtml, copyFonts, copyImages, compileSassProd, minifyScriptsProd),
     cacheBuster
 );
 
