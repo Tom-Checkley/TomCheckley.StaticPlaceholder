@@ -1,0 +1,17 @@
+.block {
+    width: 100%;
+    height: 100%;
+}
+
+@each $color, $hex in $colors {
+    .block--#{$color} {
+        background: $hex;
+        @if (lightness($hex) < 35%) {
+            color: $white;
+        }
+        @else {
+            color: $black;
+        }
+    }
+}
+

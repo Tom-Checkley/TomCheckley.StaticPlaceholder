@@ -1,0 +1,151 @@
+.grid--main-content {
+    display: grid;
+    grid-template-columns: minmax(var(--s-4), var(--s-8)) rem($line-thickness) minmax(rem(300), 4fr) rem($line-thickness) minmax(var(--s-4), var(--s-8));
+    grid-template-rows: rem(50) rem($line-thickness) auto repeat(3, rem($line-thickness) auto);
+    
+    @include media($bp-medLg) {
+        grid-template-columns: minmax(var(--s-4), 1fr) rem($line-thickness) auto rem($line-thickness) minmax(rem(250), 3fr) rem($line-thickness) minmax(var(--s-4), 1fr);        
+        grid-template-rows: rem(80) repeat(3, rem($line-thickness) auto) rem($line-thickness) rem(80);
+    }
+
+
+    .grid__heading {
+        @include grid-position("3/6", 3);
+
+        @include media($bp-medLg) {
+            @include grid-position(3, "3/6");
+        }
+    }
+
+    .grid__section {
+        @include grid-position($column: 3);
+
+        @include media($bp-medLg) {
+            @include grid-position($column: 5);
+        }
+    }
+
+    .grid__section--1 {
+        @include grid-position($row: 5);
+
+        @include media($bp-medLg) {
+            @include grid-position($row: 3);
+        }
+    }
+
+    .grid__section--2 {
+        @include grid-position($row: 7);
+
+        @include media($bp-medLg) {
+            @include grid-position($row: 5);
+        }
+    }
+
+    .grid__section--3 {
+        @include grid-position($row: 9);
+
+        @include media($bp-medLg) {
+            @include grid-position($row: 7);
+        }
+    }
+
+    .grid__line--v-1 {
+        @include grid-position($row: "2/-1");
+    }
+
+    .grid__line--v-2,
+    .grid__line--v-3 {
+        @include grid-position($row: "1/-1");
+    }
+
+    @for $i from 1 through 3 {
+        .grid__line--v-#{$i} {
+            @include grid-position($column: $i * 2);
+        }
+    }
+
+    .grid__line--h {
+        @include grid-position($column: "1/-1");
+    }
+
+    @for $i from 1 through 4 {
+        .grid__line--h-#{$i} {
+            @include grid-position($row: ($i * 2));
+
+            @include media($bp-medLg) {
+                @include grid-position($row: ($i * 2));
+            }
+        }
+    }
+
+    .grid__block--1 {
+        @include grid-position("1/4", 1);
+    }
+
+    .grid__block--2 {
+        @include grid-position(5, 3);
+
+        @include media($bp-medLg){
+            @include grid-position(7, 1);
+        }
+    }
+    .grid__block--3 {
+        @include grid-position(1, 3);
+
+        @include media($bp-medLg){
+            @include grid-position(1, 3);
+        }
+    }
+    .grid__block--4 {
+        @include grid-position(1, 9);
+
+        @include media($bp-medLg){
+            @include grid-position(7, 3);
+
+            &::before {
+                content: "";
+                display: block;
+                background-color: var(--c-bg);
+                height: 50%;
+                border-bottom: rem($line-thickness) var(--c-bg-alt) solid;
+            }
+        }
+    }
+    .grid__block--5 {
+        @include grid-position(1, 5);
+
+        @include media($bp-medLg){
+            
+        }
+    }
+    .grid__block--6 {
+        @include grid-position(7, 5);
+
+        @include media($bp-medLg){
+            @include grid-position(7, 7);
+        }
+    }
+    .grid__block--7 {
+        @include grid-position(5, 7);
+
+        @include media($bp-medLg){
+            @include grid-position(3, 7);
+        }
+    }
+    .grid__block--8 {
+        @include grid-position(5, 7);        
+
+        @include media($bp-medLg){
+            @include grid-position(1, 9);
+        }
+    }
+
+    .grid__block--9 {
+        display: none;
+
+        @include media($bp-medLg){
+            display: block;
+            @include grid-position("5/-1", 9);
+        }
+    }
+}

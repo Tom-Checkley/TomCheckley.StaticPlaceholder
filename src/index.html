@@ -21,60 +21,135 @@
     <link rel="stylesheet" href="./assets/css/main.css?v=123456">
 </head>
 <body>
-    <header class="banner banner--home">
-        <div class="banner__circle">
-            <span class="circle circle--hollow"></span>
-        </div>
-        <div class="grid grid--banner banner__body">
-            <div class="grid__heading">
-                <h1 class="banner__heading flow flow-1">
-                    <span class="banner__heading-part banner__heading-part--main">
-                        <span class="banner__heading-text">Tom Checkley</span>
-                    </span
-                    >
-                    <span class="banner__heading-part banner__heading-part--sub triangle">
-                        <span class="banner__heading-text">Bristol based Web Developer</span>
-                    </span>
-                </h1>
+    <div class="page">
+        <header class="page__header banner banner--home">
+            <div class="banner__circle">
+                <span class="circle circle--hollow"></span>
             </div>
-            <span
-                class="grid__line grid__line--h grid__line--h-1 line"
-                role="img"
-                aria-hidden="true"
-            ></span>
-            <span
-                class="grid__line grid__line--v grid__line--v-1 line"
-                role="img"
-                aria-hidden="true"
-            ></span>
-            <span
-                class="grid__line grid__line--v grid__line--v-2 line"
-                role="img"
-                aria-hidden="true"
-            ></span>
-            <span
-                class="grid__line grid__line--h grid__line--h-2 line"
-                role="img"
-                aria-hidden="true"
-            ></span>
-            <span
-                class="grid__line grid__line--h grid__line--h-3 line line--circle"
-                role="img"
-                aria-hidden="true"
-            >
-                <span class="line__circle line__circle--left"></span>
-            </span>
-            <span class="grid__circle">
-                <span
-                    class="circle circle--solid"
-                    role="img"
-                    aria-hidden="true"
-                ></span>
-            </span>
-        </div>
-        <div class="banner__message">
-            <p>Site under construction, please keep checking back for more content and features.</p>
-        </div>
-    </header>
+            <div class="grid grid--banner banner__body">
+                <div class="grid__heading">
+                    <h1 class="banner__heading flow flow-1">
+                        <span class="banner__heading-part banner__heading-part--main">
+                            <span class="banner__heading-text">Tom Checkley</span>
+                        </span>
+                        <span class="banner__heading-part banner__heading-part--sub triangle">
+                            <span class="banner__heading-text">Bristol based Web Developer</span>
+                        </span>
+                    </h1>
+                </div>
+                <span class="grid__line grid__line--h grid__line--h-1 line"
+                      role="img"
+                      aria-hidden="true"></span>
+                <span class="grid__line grid__line--v grid__line--v-1 line"
+                      role="img"
+                      aria-hidden="true"></span>
+                <span class="grid__line grid__line--v grid__line--v-2 line"
+                      role="img"
+                      aria-hidden="true"></span>
+                <span class="grid__line grid__line--h grid__line--h-2 line"
+                      role="img"
+                      aria-hidden="true"></span>
+                <span class="grid__line grid__line--h grid__line--h-3 line line--circle"
+                      role="img"
+                      aria-hidden="true">
+                    <span class="line__circle line__circle--left"></span>
+                </span>
+                <span class="grid__circle">
+                    <span class="circle circle--solid"
+                          role="img"
+                          aria-hidden="true"></span>
+                </span>
+            </div>
+            <div class="banner__message">
+                <p>Site under construction, please keep checking back for more content and features.</p>
+            </div>
+        </header>
+    
+        <main class="page__main content">
+            <div class="grid grid--main-content">
+                <span class="line grid__line--v grid__line--v-1"></span>
+                <span class="line grid__line--v grid__line--v-2"></span>
+                <span class="line grid__line--v grid__line--v-3"></span>
+    
+                <div class="grid__block grid__block--1 block block--grey block--1"></div>
+                <div class="grid__block grid__block--2 block block--black"></div>
+    
+                <div class="grid__heading content__heading">
+                    <h2>Hello</h2>
+                </div>
+    
+                <span class="line grid__line--h grid__line--h-1"></span>
+    
+                <section class="grid__section grid__section--1 section grid__block block block--blue-dark flow">
+                    <h3 class="section__heading">About me</h3>
+                    <p>Hi, I'm Tom and I'm living the dream, I get paid for my hobby! I have around 9 years development experience. I currently work on builds and maintenance for a braod range of clients at <a href="https://www.element78.co.uk/" target="_blank" rel="noreferrer">Element 78</a> based in Bristol. Lorem</p>
+                    <p>I started coding professionally in 2017 at Element 78 as a Frontend Developer, developing the skills I'd been teaching myself whilst coding as a hobby. I love taking the Design and UX Team's ideas to create solutions that makes our clients shine. </p>
+                    <p>Whilst on the Frontend Team, I became more and more involved in the Javascript side of FE development. Working with Angular (js and 2+), Vue and vanilla Javascript I have grown a real passion for the more programatic side of coding.</p>
+                    <p>Due to this, when a position in the Backend Team opened up in 2021 I switched teams. Chucking myself straight back to the beginning and a whole new learning curve. As part of the Backend Team I have been developing my skills in C#, .Net and creating great content editor expeiences with Umbraco CMS.</p>
+                </section>
+    
+                <div class="grid__block grid__block--3 block block--red"></div>
+                <div class="grid__block grid__block--4 block block--yellow"></div>
+                <div class="grid__block grid__block--5 block block--red"></div>
+                <span class="line grid__line--h grid__line--h-2"></span>
+    
+                <section class="grid__section grid__section--2 section section--no-padding">
+                    <div class="section__body flow">
+                        <h3 class="section__heading">Skills</h3>
+                        <p>A quick overview of some of the technologies I have experience working with.</p>
+                    </div>
+                    <div class="grid grid--section-blocks section__blocks">
+                        <div class="grid__block section__block block block--white flow">
+                            <h4 class="section__subheading">Frontend</h4>
+                            <ul>
+                                <li>HTML</li>
+                                <li>Accessibility &amp; WAI-Aria</li>
+                                <li>CSS</li>
+                                <li>SCSS &amp Less</li>
+                                <li>Javascript</li>
+                                <li>Angular</li>
+                                <li>Vue</li>
+                            </ul>
+                        </div>
+                        <div class="grid__block section__block block block--black flow">
+                            <h4 class="section__subheading">Backend</h4>
+                            <ul>
+                                <li>C#</li>
+                                <li>.Net Framework</li>
+                                <li>.Net Core</li>
+                                <li>Umbraco CMS</li>
+                                <li>UCommerce</li>
+                                <li>Entity Framework</li>
+                                <li>MSSQL</li>
+                                <li>Firebase</li>
+                            </ul>
+                        </div>
+                        <div class="grid__block section__block block block--red flow">
+                            <h4 class="section__subheading">Build / development tools and systems</h4>
+                            <ul>
+                                <li>Azure Dev Ops</li>
+                                <li>Git</li>
+                                <li>Gulp</li>
+                                <li>Webpack</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <div class="grid__block grid__block--6 block block--grey"></div>
+    
+                <div class="grid__block grid__block--7 block block--black"></div>
+                <div class="grid__block grid__block--8 block block--grey"></div>
+                <span class="line grid__line--h grid__line--h-3"></span>
+    
+                <section class="grid__section grid__section--3 section flow block block--yellow">
+                    <h3 class="section__heading">About this site</h3>
+                   <p>I built my previous site back when I was still trying to get my first professional role and it was long overdue a refresh! This page is just a static placeholder while I work on the main rebuild.</p>
+                </section>
+    
+                <span class="line grid__line--h grid__line--h-4"></span>
+                <div class="grid__block grid__block--9 block block--blue-dark"></div>
+            </div>
+        </main>        
+    </div>
 </body>
 </html>
