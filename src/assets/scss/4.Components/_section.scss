@@ -1,0 +1,23 @@
+.section:not(.section--no-padding) {
+    padding: var(--s-6);
+}
+
+.section--no-padding {
+    .section__body {
+        padding: var(--s-6);
+        background: var(--c-grey);
+    }
+}
+
+.section__heading {
+    font-size: var(--f-x-large);
+}
+
+.section__subheading {
+    font-size: var(--f-larger);
+}
+
+.section__block {
+    border-top: rem($line-thickness) var(--c-bg-alt) solid;
+    padding: var(--s-6);
+}

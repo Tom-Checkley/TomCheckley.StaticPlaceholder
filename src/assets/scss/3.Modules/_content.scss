@@ -3,35 +3,31 @@
 }
 
 .content__heading {    
+    position: relative;
+    z-index: 1;
     padding: var(--s-6);
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
+    mix-blend-mode: difference;
+    background: var(--c-bg-alt);
+    color: var(--c-text-alt);
 
     @include media($bp-medLg) {
-        position: sticky;
-        top: 0;
-        mix-blend-mode: difference;
+        // position: sticky;
+        top: 0;       
     }
     
     h2 {        
         font-size: clamp(#{rem(72)}, 20vmin, #{rem(126)});
-        line-height: 1;       
-
+        color: var(--c-text-alt);
+        
         @include media($bp-medLg) {
             position: sticky;
+            z-index: 10;
             top: var(--s-6);
             writing-mode: vertical-lr;
             transform: rotate(180deg);
-            text-align: right;
-            color: $white;
+            text-align: right;     
         }
     }
-}
-
-.content__subheading {
-    font-size: var(--f-x-large);
-}
-
-.content__section {
-    padding: var(--s-6);
 }
