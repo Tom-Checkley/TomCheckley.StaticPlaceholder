@@ -45,10 +45,9 @@ a {
         height: rem(1);
         width: 100%;
         left: 0;
-        border-bottom: rem(1) var(--c-text-alt) solid;
+        border-bottom: rem(1) var(--c-text) solid;
         transform: scaleX(1);
         transition: transform .2s linear;
-        //transform-origin: left;
     }
 
     &:hover,

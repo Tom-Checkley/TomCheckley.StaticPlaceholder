@@ -1,0 +1,22 @@
+.grid--page-body {
+    grid-template-columns: 1fr rem($line-thickness) minmax(rem(300), 3fr) rem($line-thickness) 1fr;
+    grid-template-rows: auto rem($line-thickness) repeat(3, auto rem($line-thickness));
+
+    .grid__heading {
+        @include grid-position(3, 1);
+    }
+
+    .grid__section {
+        @include grid-position($column: 3);
+    }
+
+    .grid__section--1 {
+        @include grid-position($row: 3);
+    }
+    .grid__section--2 {
+        @include grid-position($row: 5);
+    }
+    .grid__section--3 {
+        @include grid-position($row: 7);
+    }
+}
