@@ -1,4 +1,4 @@
-.grid--main-content {
+.grid--mondrian-layout {
     display: grid;
     grid-template-columns: minmax(var(--s-4), var(--s-8)) rem($line-thickness) minmax(rem(300), 4fr) rem($line-thickness) minmax(var(--s-4), var(--s-8));
     grid-template-rows: rem(50) rem($line-thickness) auto repeat(3, rem($line-thickness) auto);
