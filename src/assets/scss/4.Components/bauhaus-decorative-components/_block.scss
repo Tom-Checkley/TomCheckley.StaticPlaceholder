@@ -12,6 +12,10 @@
         @else {
             color: $black;
         }
+
+        &.block--opaque {
+            background: rgba($hex, 0.8);
+        }
     }
 }
 

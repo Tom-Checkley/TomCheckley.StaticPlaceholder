@@ -19,6 +19,8 @@
     <title>Tom Checkley | Web Developer</title>
     
     <link rel="stylesheet" href="./assets/css/main.css?v=123456">
+
+    <!-- <script defer src="./assets/js/libs/svgxuse.js"></script> -->
 </head>
 <body>
     <div class="page">
@@ -32,6 +34,9 @@
                         <span class="banner__heading-part banner__heading-part--main">
                             <span class="banner__heading-text">Tom Checkley</span>
                         </span>
+                        <!-- <a href="#main" class="button button--to-content">
+                            <span></span>
+                        </a> -->
                         <span class="banner__heading-part banner__heading-part--sub triangle">
                             <span class="banner__heading-text">Bristol based Web Developer</span>
                         </span>
@@ -65,31 +70,266 @@
             </div>
         </header>
     
-        <main class="page__main content">
-            
+        <main id="main" class="page__main content">
+
             <div class="grid grid--page-body">
+                <!-- <span class="grid__circle grid__circle--1 content__circle content__circle--1">
+                    <span class="circle circle--hollow"></span>
+                </span> -->
+
+                <span class="line line--circle grid__line--v grid__line--v-1">
+                    <span class="line__circle line__circle--top"></span>
+                </span>
+                <span class="line line--circle grid__line--v grid__line--v-2">
+                    <span class="line__circle line__circle--bottom"></span>
+                </span>
+                <span class="line grid__line--v grid__line--v-3"></span>
+
+                <span class="line line--circle grid__line--h grid__line--h-0">
+                    <span class="line__circle line__circle--right"></span>
+                </span>
+                <span class="line grid__line--h grid__line--h-1"></span>
+
                 <div class="grid__heading content__heading">
-                    <h2>Hello</h2>
+                    <!-- <div> -->
+                        <h2>Hello</h2>
+                    <!-- </div> -->
                 </div>
-                <section class="grid__section grid__section--1 section flow">
-                    <h3 class="section__heading">About me</h3>
-                    <p>Hi I'm Tom and I'm living the dream, I get paid for my hobby! I have around about 9 years development experience and I currently work on builds and maintenance for a braod range of clients at <a href="https://element78.co.uk" target="_blank" rel="noreferrer">Element 78</a> based in Bristol.</p>
-                    <p>I started coding professionally in 2017 at Element 78 as a Frontend Developer, developing the skills I'd been teaching myself whilst coding as a hobby. I love taking the Design and UX teams ideas to create a solution that makes our clients shine. </p>
-                    <p>Whilst on the Frontend Team I became more and more involved in the Javascript side of FE development and have grown a real passion for the more programatic side of coding working with Angular (js and 2+), Vue and vanilla Javascript.</p>
-                    <p>Due to this, when a position in the Backend Team opened up in 2021 I chucked myself straight back to the beginning on a whole new learning curve and switched teams, learning C#, .Net and creating great content editor user expeiences whith Umbraco CMS.</p>
+                <div class="grid__subheading content__subheading">
+                    <h2>I make websites</h2>
+                </div>
+                <span class="line grid__line--h grid__line--h-2"></span>
+
+                <section class="grid__section grid__section--1 section section--text">
+                    <span class="section__circle">
+                        <span class="circle circle--solid"></span>
+                    </span>
+                    <div class="section__wrapper">
+                        <div class="section__body block block--yellow block--opaque flow">
+                            <h3 class="section__heading">About me</h3>
+                            <p>Hi, I'm Tom and I'm living the dream, I get paid for my hobby! I have around 9 years development experience. I currently work on builds and maintenance for a braod range of clients at <a href="https://www.element78.co.uk/" target="_blank" rel="noreferrer">Element 78</a> based in Bristol.</p>
+                            <p>I started coding professionally in 2017 at Element 78 as a Frontend Developer, developing the skills I'd been teaching myself whilst coding as a hobby. I love taking the Design and UX Team's ideas to create solutions that makes our clients shine. </p>
+                            <p>Whilst on the Frontend Team, I became more and more involved in the Javascript side of FE development. Working with Angular (js and 2+), Vue and vanilla Javascript I have grown a real passion for the more programatic side of coding.</p>
+                            <p>Due to this, when a position in the Backend Team opened up in 2021 I switched teams. Chucking myself straight back to the beginning and a whole new learning curve. As part of the Backend Team I have been developing my skills in C#, .Net and creating great content editor expeiences with Umbraco CMS.</p>
+                        </div>
+                    </div>
                 </section>
-                <section class="grid__section grid__section--2 section flow">
-                    <h3 class="section__heading">Skills</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, eius! Alias quam rem quos incidunt esse vitae modi harum? Quidem fugit numquam, rem quos ratione voluptatum quis accusantium recusandae placeat?</p>
-                    <p>Modi perferendis aspernatur laboriosam voluptate exercitationem rerum officia dolore sapiente totam. Debitis accusamus sunt illum, cupiditate ad velit iste labore adipisci est explicabo cum assumenda dicta sint repellendus et perspiciatis.</p>
+                <span class="line grid__line--h grid__line--h-3"></span>
+
+                <section class="grid__section grid__section--2 section section--no-padding">
+                    
+                    <div class="section__body">
+                        <div class="skills-list flow">
+                            <h3 class="section__heading">Skills</h3>
+                            <p>Some of the technologies I have experience working with.</p>
+                            <ul class="grid grid--skills-list">
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--html"></use>
+                                        </svg>
+                                        <span>HTML</span>
+                                    </div>
+                                </li>
+                                <!-- <li>Accessibility &amp; WAI-Aria</li> -->
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--css"></use>
+                                        </svg>
+                                        <span>CSS</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--sass"></use>
+                                        </svg>
+                                        <span>SASS</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--tailwind"></use>
+                                        </svg>
+                                        <span>Tailwind</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--javascript"></use>
+                                        </svg>
+                                        <span>Javascript</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--typescript"></use>
+                                        </svg>
+                                        <span>Typescript</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--angular"></use>
+                                        </svg>
+                                        <span>Angular</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--vue"></use>
+                                        </svg>
+                                        <span>Vue</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--csharp"></use>
+                                        </svg>
+                                        <span>C#</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--dotnet"></use>
+                                        </svg>
+                                        <span>.Net</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--dotnetcore"></use>
+                                        </svg>
+                                        <span>.Net Core</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--umbraco"></use>
+                                        </svg>
+                                        <span>Umbraco</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--ucommerce"></use>
+                                        </svg>
+                                        <span>UCommerce</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--sql"></use>
+                                        </svg>
+                                        <span>MSSQL</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--firebase"></use>
+                                        </svg>
+                                        <span>Firebase</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--azure"></use>
+                                        </svg>
+                                        <span>Azure Dev Ops</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--git"></use>
+                                        </svg>
+                                        <span>Git</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--gulp"></use>
+                                        </svg>
+                                        <span>Gulp</span>
+                                    </div>
+                                </li>
+                                <!-- <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--webpack"></use>
+                                        </svg>
+                                        <span>Webpack</span>
+                                    </div>
+                                </li> -->
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--npm"></use>
+                                        </svg>
+                                        <span>NPM</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--yarn"></use>
+                                        </svg>
+                                        <span>Yarn</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="skills-list__item">
+                                        <svg class="icon">
+                                            <use xlink:href="./assets/icons/symbols.svg#icon--nuget"></use>
+                                        </svg>
+                                        <span>Nuget</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
-                <section class="grid__section grid__section--3 section flow">
-                    <h3 class="section__heading">About this site</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint similique maxime quibusdam maiores accusantium! Voluptates repudiandae, harum, autem ut a, obcaecati iusto soluta quis sed temporibus officia placeat assumenda sunt.</p>
-                    <p>Voluptatem incidunt dolorum quos id natus modi iure aut aspernatur reprehenderit quod laudantium neque sint odit quibusdam voluptatum quaerat ratione atque, reiciendis eius consectetur tenetur vero! Ipsa quo omnis quasi.</p>
+                <span class="line grid__line--h grid__line--h-4"></span>
+
+                <section class="grid__section grid__section--3 section section--reverse section--text flow block">
+                    <span class="section__circle">
+                        <span class="circle circle--solid"></span>
+                    </span>
+                    <div class="section__wrapper">
+                        <div class="section__body block block--yellow block--opaque flow">
+                            <h3 class="section__heading">About this site</h3>
+                            <p>I built my previous site back when I was still trying to get my first professional role and it was long overdue a refresh! This page is just a static placeholder while I work on the main rebuild.</p>
+                            <a href="https://github.com/Tom-Checkley/TomCheckley.StaticPlaceholeder" class="button button--primary" target="_blank" rel="noreferrer">
+                                <span class="button__body">View the code</span>
+                            </a>
+                        </div>
+                    </div>
                 </section>
+                <span class="line grid__line--h grid__line--h-5"></span>
+                
+                <!-- <span class="grid__circle grid__circle--2 content__circle content__circle--2">
+                    <span class="circle circle--hollow"></span>
+                </span> -->
             </div>
+
         </main>        
     </div>
+
+    <!-- <script src="./assets/js/main.js"></script> -->
 </body>
 </html>

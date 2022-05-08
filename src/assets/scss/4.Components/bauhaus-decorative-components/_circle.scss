@@ -21,17 +21,26 @@
             transform: scale(1);
         }
     }
+
+    .content & {
+        --circle-color: var(--c-red);
+    }
 }
 
 .circle--hollow {
+    border-style: solid;
+    border-color: var(--c-yellow);
+    border-width: rem($line-thickness);
+
+    @include media($bp-medLg) {
+        border-width: rem($line-thickness * 2);
+    }
+    
     .banner & {
         top: 0;
         right: 0;
         position: absolute;
-        transform: translate(50%, -50%);
-        border-style: solid;
-        border-color: var(--c-yellow);
-        border-width: rem($line-thickness);
+        transform: translate(50%, -50%);        
         width: rem(400);
         height: rem(400);
         z-index: 2;
@@ -39,7 +48,27 @@
         @include media($bp-med) {
             width: rem(600);
             height: rem(600);
-            border-width: rem($line-thickness * 2);
+            
         }
+    }
+
+    .content & {
+        position: relative;
+        width: rem(700);
+        height: rem(700);
+        display: block;
+    }
+
+    .content__circle--1 & {
+        transform: translate(-50%, -50%);
+        top: 0;
+        // left: 0;
+    }
+
+    .content__circle--2 & {
+        transform: translate(50%, 50%);
+        bottom: 0;
+        left: 100%;
+        
     }
 }

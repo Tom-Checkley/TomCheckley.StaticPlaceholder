@@ -1,22 +1,164 @@
 .grid--page-body {
-    grid-template-columns: 1fr rem($line-thickness) minmax(rem(300), 3fr) rem($line-thickness) 1fr;
-    grid-template-rows: auto rem($line-thickness) repeat(3, auto rem($line-thickness));
+    --grid-spacing-v: #{rem(67)};    
+
+    grid-template-columns:  minmax(var(--s-3), .25fr) 
+                            rem($line-thickness)
+                            minmax(rem(300), 4fr)
+                            rem($line-thickness) 
+                            minmax(var(--s-3), .25fr);
+
+    grid-template-rows: var(--grid-spacing-v) 
+                        var(--grid-spacing-v)
+                        rem($line-thickness)
+                        auto
+                        rem($line-thickness) 
+                        repeat(3, auto rem($line-thickness)) 
+                        var(--grid-spacing-v)
+                        var(--grid-spacing-v);
+
+    @include media($bp-large) {
+        --grid-spacing-v: #{rem(82)};
+
+        grid-template-columns:  1px
+                                1fr
+                                rem($line-thickness)
+                                auto
+                                rem($line-thickness)
+                                minmax(rem(300), 3fr)
+                                rem($line-thickness) 
+                                1fr
+                                1px;
+
+        grid-template-rows: 1px
+                            var(--grid-spacing-v)
+                            rem($line-thickness) 
+                            var(--grid-spacing-v)
+                            rem($line-thickness)
+                            repeat(3, auto rem($line-thickness)) 
+                            var(--grid-spacing-v)
+                            var(--grid-spacing-v)
+                            1px;
+    }
 
     .grid__heading {
-        @include grid-position(3, 1);
+        @include grid-position(3, 4);
+
+        @include media($bp-large) {
+            @include grid-position(4, "6/11");
+        }
+    }
+
+    .grid__subheading {
+        @include media($bp-large) {
+            @include grid-position(6, 4);
+        }
     }
 
     .grid__section {
         @include grid-position($column: 3);
+
+        @include media($bp-large) {
+            @include grid-position($column: 6);
+        }
     }
 
     .grid__section--1 {
-        @include grid-position($row: 3);
+        @include grid-position($row: 6);
+        
+        @include media($bp-large) {
+            @include grid-position($row: 6);
+        }
     }
     .grid__section--2 {
-        @include grid-position($row: 5);
+        @include grid-position($row: 8);
+
+        @include media($bp-large) {
+            @include grid-position($row: 8);
+        }
     }
     .grid__section--3 {
-        @include grid-position($row: 7);
+        @include grid-position($row: 10);
+
+        @include media($bp-large) {
+            @include grid-position($row: 10);
+        }
     }
+
+    .grid__line--v-1 {
+        @include grid-position(2, "2/-1");
+
+        @include media($bp-large) {
+            @include grid-position(3, "3/-1");
+        }
+    }
+    .grid__line--v-2 {
+        @include grid-position(4, "1/-2");
+
+        @include media($bp-large) {
+            @include grid-position(5, "4/-3");
+        }
+    }
+    .grid__line--v-3 {
+        display: none;
+
+        @include media($bp-large) {
+            display: block;
+            @include grid-position(7, "5/-4");
+        }
+    }
+
+    .grid__line--h-0 {
+        display: none;
+
+        @include media($bp-large) {
+            display: block;
+            @include grid-position("5/8", 3)
+        }
+    }
+
+    .grid__line--h-1 {
+        @include grid-position("1/-1", 3);
+
+        @include media($bp-large) {
+            // position: sticky;
+            // top: rem(82);
+            @include grid-position("1/-1", 5);
+        }    
+    }
+    .grid__line--h-2 {
+        @include grid-position("1/-1", 5);
+
+        @include media($bp-large) {
+            @include grid-position("1/-1", 7);
+        }
+    }
+    .grid__line--h-3 {
+        @include grid-position("1/-1", 7);
+
+        @include media($bp-large) {
+            @include grid-position("1/-1", 9);
+        }   
+    }
+    .grid__line--h-4 {
+        @include grid-position("1/-1", 9);
+
+        @include media($bp-large) {
+            @include grid-position("1/-1", 11);
+        }        
+    }
+
+    .grid__line--h-5 {
+        @include grid-position("1/-1", 11);
+
+        @include media($bp-large) {
+            display: none;
+        }        
+    }
+
+    // .grid__circle--1 {
+    //     @include grid-position(1, "1/-1");
+    // }
+    // .grid__circle--2{
+    //     @include grid-position(-1, "1/-1");
+    // }
 }

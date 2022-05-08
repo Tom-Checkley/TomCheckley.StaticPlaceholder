@@ -10,23 +10,43 @@
     }
 
     .content & {
-        --line-color: var(--c-bg-alt);
+        z-index: 1;
+        --line-color: var(--c-bg);
     }
 }
 
 .line--circle {
     .line__circle {
+        --circle-diameter: #{rem(42)};
+
+        @include media($bp-medLg) {
+            --circle-diameter: #{rem(56)};
+        }
+
         display: block;
-        background: var(--c-bg);
+        background: var(--line-color);
         position: absolute;
-        top: 50%;
-        height: rem(56);
-        width: rem(56);
+        height: var(--circle-diameter);
+        width: var(--circle-diameter);
         border-radius: 50%;
 
+        &--top {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &--bottom {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
         &--left {           
             left: 0;
-            transform: translate(-85%, -50%);            
+            transform: translate(-50%, -50%);
+        }
+        &--right {
+            right: 0;
+            transform: translate(50%, -50%);
         }
     }
 

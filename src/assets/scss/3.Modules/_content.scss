@@ -1,33 +1,62 @@
 .content {
     position: relative;
+    // overflow: hidden;
+    background: var(--c-bg-alt);
+    color: var(--c-text-alt);
 }
 
 .content__heading {    
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: var(--s-6);
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
     mix-blend-mode: difference;
-    background: var(--c-bg-alt);
-    color: var(--c-text-alt);
 
-    @include media($bp-medLg) {
-        // position: sticky;
-        top: 0;       
-    }
-    
     h2 {        
-        font-size: clamp(#{rem(72)}, 20vmin, #{rem(126)});
+        font-size: clamp(#{rem(72)}, 15vmin, #{rem(126)});
         color: var(--c-text-alt);
         
-        @include media($bp-medLg) {
+        @include media($bp-large) {
             position: sticky;
-            z-index: 10;
             top: var(--s-6);
+            width: clamp(#{rem(72)}, 15vmin, #{rem(126)}); // falls out of container on resize without width set
+            z-index: 10;
             writing-mode: vertical-lr;
             transform: rotate(180deg);
             text-align: right;     
         }
     }
 }
+
+.content__subheading {
+    display: none;
+
+    @include media($bp-large) {
+        display: flex;
+        align-items: center;
+        font-size: var(--f-x-large);
+        padding: 0 var(--s-8);
+    }
+}
+
+// .content__circle {
+//     position: relative;
+//     display: block;
+// }
+
+// .content__circle--1 {
+//     .circle {
+//         position: sticky;
+//         top: 50%;
+//         left: 0;
+//     }
+// }
+
+// .content__circle--2 {
+//     .circle {
+//         position: sticky;
+//         bottom: 0;
+//         right: 0;
+//     }
+// }
