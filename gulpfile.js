@@ -60,6 +60,12 @@ function copyFonts() {
         .pipe(browsersync.stream());
 }
 
+function copyIcons() {
+    return gulp.src("./src/assets/icons/**/*.*")
+        .pipe(gulp.dest("./dist/assets/icons/"))
+        .pipe(browsersync.stream());
+}
+
 function copyImages() {
     return gulp.src("./src/assets/images/**/*")
         .pipe(imagemin())
@@ -102,26 +108,26 @@ function compileSassProd() {
         .pipe(gulp.dest("./dist/assets/css/"));
 }
 
-function minifyScriptsDev() {
-    return gulp
-        .src("./src/assets/js/**/*.js")
-        .pipe(sourcemaps.init())
-        .pipe(concat("main"))
-        .pipe(sourcemaps.write("./maps/"))
-        .pipe(gulp.dest("./src/assets/js/"))
-        .pipe(browsersync.stream());
-}
+// function minifyScriptsDev() {
+//     return gulp
+//         .src(["./src/assets/js/**/*.js", "!./src/assets/js/main.js"])
+//         .pipe(sourcemaps.init())
+//         .pipe(concat("main.js"))
+//         .pipe(sourcemaps.write("./maps/"))
+//         .pipe(gulp.dest("./src/assets/js/"))
+//         .pipe(browsersync.stream());
+// }
 
-function minifyScriptsProd() {
-    return gulp
-        .src("./src/assets/js/**/*.js")
-        .pipe(sourcemaps.init())
-        .pipe(concat("main"))
-        .pipe(terser().on("error", (error) => console.log(error)))
-        .pipe(rename({suffix: ".min"}))
-        .pipe(sourcemaps.write("./maps/"))
-        .pipe(gulp.dest("./src/assets/js/"));
-}
+// function minifyScriptsProd() {
+//     return gulp
+//         .src(["./src/assets/js/**/*.js", "!./src/assets/js/main.js"])
+//         .pipe(sourcemaps.init())
+//         .pipe(concat("main.js"))
+//         .pipe(terser().on("error", (error) => console.log(error)))
+//         .pipe(rename({suffix: ".min"}))
+//         .pipe(sourcemaps.write("./maps/"))
+//         .pipe(gulp.dest("./src/assets/js/"));
+// }
 
 function cacheBuster() {
     return gulp
@@ -137,14 +143,14 @@ function cleanDist() {
 function watcher() {
     gulp.watch("./src/assets/scss/**/*.html", copyHtml).on("change", browsersync.reload);
     gulp.watch("./src/assets/scss/**/*.scss", compileSassDev).on("change", browsersync.reload);
-    gulp.watch("./src/assets/js/**/*.js", minifyScriptsDev).on("change", browsersync.reload)
+    // gulp.watch("./src/assets/js/**/*.js", minifyScriptsDev).on("change", browsersync.reload)
 }
 
-const dev = gulp.parallel(compileSassDev, minifyScriptsDev, init, watcher);
+const dev = gulp.parallel(compileSassDev,  init, watcher);
 
 const prod = gulp.series(
     cleanDist,
-    gulp.parallel(copyHtml, copyFonts, copyImages, compileSassProd, minifyScriptsProd),
+    gulp.parallel(copyHtml, copyFonts, copyImages, copyIcons, compileSassProd),
     cacheBuster
 );
 

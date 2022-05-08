@@ -1,5 +1,5 @@
 {
-    "name": "TomCheckley.UnderConstruction",
+    "name": "TomCheckley.StaticPlaceholder",
     "version": "1.0.0",
     "description": "Static holding page whilst the main site is under construction",
     "main": "index.js",
@@ -27,6 +27,7 @@
         "node-sass": "^7.0.1",
         "postcss": "^8.4.12",
         "sass": "^1.51.0",
+        "svgxuse": "^1.2.6",
         "yargs": "^17.4.1"
     }
 }

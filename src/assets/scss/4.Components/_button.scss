@@ -1,0 +1,48 @@
+.button {
+    position: relative;
+    appearance: none;
+    border: none;
+    padding: 0;
+
+    .button__body {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        padding: var(--s-4) var(--s-8);
+        font-size: var(--f-large);
+        transition: inherit;
+        font-weight: 700;
+    }
+}
+
+.button--primary {
+    background-color: var(--c-bg-alt);
+    color: var(--c-text-alt);
+    overflow: hidden;
+    transition: all .2s linear;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--c-bg);
+        transform: translateX(calc(-100% - 3px));
+        transition: all .2s linear;
+    }
+    
+    &:hover,
+    &:focus {
+        .button__body {
+            color: var(--c-text);
+        }
+
+        &::before {
+            transform: translateX(0);
+        }
+    }
+}

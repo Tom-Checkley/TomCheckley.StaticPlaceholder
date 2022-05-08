@@ -1,11 +1,23 @@
-.section:not(.section--no-padding) {
-    padding: var(--s-6);
-}
+.section {
+    --section-spacing: var(--s-4);
+    position: relative;
+    overflow: hidden;
 
-.section--no-padding {
-    .section__body {
-        padding: var(--s-6);
-        background: var(--c-grey);
+    &:not(.section--no-padding) {
+        padding: var(--section-spacing);
+    }
+
+    @include media($bp-medLg) {
+        --section-spacing: var(--s-6)
+    }
+
+    @include media($bp-large) {
+        overflow: visible;
+    }
+    
+    @include media($bp-larger) {
+        
+        --section-spacing: var(--s-8)
     }
 }
 
@@ -19,5 +31,74 @@
 
 .section__block {
     border-top: rem($line-thickness) var(--c-bg-alt) solid;
-    padding: var(--s-6);
+    padding: var(--section-spacing);
+}
+
+.section--text {
+    .section__wrapper {
+        position: relative;
+        padding: var(--section-spacing); 
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--c-blue-dark);
+            clip-path: polygon(0 50%, 0 100%, 100% 100%);
+
+            @include media($bp-medLg) {
+                clip-path: polygon(0 0, 0 100%, 100% 100%);
+            }
+        }
+    }
+
+    .section__circle {
+        --circle-size: #{rem(300)};
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--circle-size);
+        height: var(--circle-size);
+        transform: translate(33%, -33%);
+
+        @include media($bp-large) {
+            --circle-size: #{rem(500)};
+        }
+    }
+
+    &.section--reverse {
+        .section__circle {
+            --circle-size: #{rem(400)};
+            left: 0;
+            bottom: 0;
+            transform: translate(-33%, 50%);
+
+            .circle {
+                --circle-color: var(--c-blue-dark);
+            }
+        }
+
+        .section__wrapper {
+            &::before {
+                background: var(--c-red);
+                top: 0;
+                right: 0;
+                clip-path: polygon(100% 0, 100% 100%, 0 0);
+
+                @include media($bp-medLg) {
+                    clip-path: polygon(100% 0, 100% 100%, 0 0);
+                }
+            }
+        }
+    }
+}
+
+.section__body {
+    padding: var(--section-spacing);
+    z-index: 1;
+    position: relative;
 }
