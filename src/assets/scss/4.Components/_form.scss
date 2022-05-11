@@ -1,0 +1,124 @@
+.form__heading {
+    font-size: var(--f-x-large);
+    margin-top: var(--s-7)
+}
+
+.form__control {
+    font-size: var(--f-large);
+
+    & > * {
+        display: block;
+    }
+}
+
+.form__label {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.form__input {
+    width: 100%;
+    min-width: rem(280);
+    height: 0;
+    transition: all 0.3s linear;
+    
+    @include media($bp-med) {
+        min-width: rem(420);
+    }
+    
+    .opened & {
+        padding-top: var(--s-3);
+    }
+
+    input,
+    textarea {
+        background: var(--c-grey);
+        width: 100%;
+        height: 100%;
+        font-size: var(--f-large);
+        border: none;
+        padding: var(--s-2);
+        transform: scale(0);
+        transform-origin: top left;
+        transition: transform 0.3s linear;
+
+        .opened & {
+            transform: scale(1);
+            outline: none;
+        }
+    }
+}
+.form__input--text {
+    .opened & {
+        animation: input-grow 0.3s linear reverse forwards;
+    }
+}
+.form__input--textarea {
+    .opened & {
+        animation: textarea-grow 0.3s linear reverse forwards;
+    }
+}
+
+.form__required-indicator {
+    position: relative;
+    color: var(--c-red);
+    padding: 0 rem(4);
+    margin-top: rem(3);
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+        content: "Required";
+        position: absolute;
+        font-size: var(--f-x-small);
+        font-weight: 700;
+        display: inline-block;        
+        right: 0;
+        transform: translateX(100%) scale(0);
+        transition: transform .2s linear;
+        transform-origin: left;
+        padding: var(--s-1);
+        background: var(--c-grey);
+        color: var(--c-text);
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(100%) scale(1);
+        }
+    }
+}
+
+.form__validation-error-message {
+    color: var(--c-red);
+}
+
+.form__submit {
+    margin-bottom: var(--s-7);
+}
+
+@keyframes input-grow {
+    0% {
+        height: auto;
+    }
+    1% {
+        height: rem(50);
+    }
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes textarea-grow {
+    0% {
+        height: auto;        
+    }
+    99% {
+        height: rem(255);
+    }
+    100% {
+        height: 0;
+    }
+}

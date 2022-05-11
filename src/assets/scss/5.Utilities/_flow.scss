@@ -1,3 +1,9 @@
 .flow {
     @include flow();
 }
+
+@each $key, $val in $spacing {
+    .flow--#{$key} {
+        @include flow($line-height: $val);
+    }
+}

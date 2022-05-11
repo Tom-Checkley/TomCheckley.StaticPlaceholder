@@ -1,0 +1,16 @@
+.grid--footer {
+    align-items: center;
+    
+    @include media($bp-large) {
+        grid-template-columns: minmax(rem(400), 2fr) minmax(rem(400), 1fr);
+        gap: var(--s-6);
+
+        .grid__form {
+            grid-column: 1;
+        }
+    
+        .grid__social {
+            grid-column: 2
+        }
+    }
+}

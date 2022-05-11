@@ -1,27 +1,11 @@
 .button {
     position: relative;
     appearance: none;
-    border: none;
+    border: 2px solid var(--button-border-color);
+    background-color: var(--button-bg-color);
     padding: 0;
-
-    .button__body {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        display: inline-block;
-        padding: var(--s-4) var(--s-8);
-        font-size: var(--f-large);
-        transition: inherit;
-        font-weight: 700;
-    }
-}
-
-.button--primary {
-    background-color: var(--c-bg-alt);
-    color: var(--c-text-alt);
+    text-decoration: none;
     overflow: hidden;
-    transition: all .2s linear;
 
     &::before {
         content: "";
@@ -30,19 +14,71 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--c-bg);
+        background-color: var(--button-hover-bg-color);
         transform: translateX(calc(-100% - 3px));
         transition: all .2s linear;
     }
-    
+
+    .button__body {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--button-color);
+        line-height: 1;
+        transition: inherit;
+        font-weight: 700;
+    }
+
     &:hover,
     &:focus {
         .button__body {
-            color: var(--c-text);
+            color: var(--button-hover-color);
         }
 
         &::before {
             transform: translateX(0);
         }
+    }    
+}
+
+.button--primary,
+.button--secondary {    
+    .button__body {
+        padding: var(--s-4) var(--s-8);
+        font-size: var(--f-large);
+    }
+}
+
+.button--primary {
+    --button-color: var(--c-text-alt);
+    --button-bg-color: var(--c-bg-alt);
+    --button-border-color: var(--c-bg-alt);
+    --button-hover-color: var(--c-text);
+    --button-hover-bg-color: var(--c-bg);
+}
+
+.button--secondary {
+    --button-color: var(--c-text-alt);
+    --button-bg-color: var(--c-bg-alt);
+    --button-border-color: var(--c-bg);
+    --button-hover-color: var(--c-text);
+    --button-hover-bg-color: var(--c-bg);
+}
+
+
+.button--social {
+    --button-color: var(--c-text-alt);
+    --button-bg-color: var(--c-bg-alt);
+    --button-border-color: var(--c-bg-alt);
+    --button-hover-color: var(--c-text);
+    --button-hover-bg-color: var(--c-bg);
+
+    .button__body {
+        font-size: var(--f-xx-large);
+        padding: var(--s-4);
     }
 }
