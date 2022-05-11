@@ -1227,4 +1227,16 @@ svg {
 .flow--10 > * + * {
   margin-top: 5rem;
 }
+
+.vh {
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
 /*# sourceMappingURL=maps/main.css.map */
