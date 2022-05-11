@@ -1,0 +1,10 @@
+.footer {
+    --footer-background: var(--c-bg-alt);
+    --footer-text: var(--c-text-alt);
+
+    background: var(--footer-background);
+    color: var(--footer-text);
+    border-top: rem($line-thickness) var(--footer-text) solid;
+    position: relative;
+    z-index: 4;
+}

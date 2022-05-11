@@ -1,0 +1,20 @@
+.link {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: rem(1);
+        height: rem(1);
+        width: 100%;
+        left: 0;
+        border-bottom: rem(1) var(--c-text) solid;
+        transform: scaleX(1);
+        transition: transform .2s linear;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            transform: scaleX(0);
+        }
+    }
+}

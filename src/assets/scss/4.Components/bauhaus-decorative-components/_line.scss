@@ -1,18 +1,10 @@
 .line {
+    --line-color: var(--c-bg);
+    z-index: 3;
     position: relative;
     background: var(--line-color);
     width: 100%;
     height: 100%;
-    
-    .banner & {
-        --line-color: var(--c-bg);
-        z-index: 1;
-    }
-
-    .content & {
-        z-index: 1;
-        --line-color: var(--c-bg);
-    }
 }
 
 .line--circle {
@@ -42,10 +34,12 @@
         }
         &--left {           
             left: 0;
+            top: 50%;
             transform: translate(-50%, -50%);
         }
         &--right {
             right: 0;
+            top: 50%;
             transform: translate(50%, -50%);
         }
     }
