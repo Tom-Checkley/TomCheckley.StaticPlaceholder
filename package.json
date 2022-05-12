@@ -2,16 +2,23 @@
     "name": "TomCheckley.StaticPlaceholder",
     "version": "1.0.0",
     "description": "Static holding page whilst the main site is under construction",
-    "main": "index.js",
+    "main": "main.js",
+    "private": "true",
     "repository": "https://github.com/Tom-Checkley/TomCheckley.UnderConstruction.git",
     "author": "Tom Checkley",
     "license": "MIT",
     "engines": {
         "node": "^14.18.1"
     },
+    "scripts": {
+        "start": "webpack serve --open",
+        "dev": "webpack --mode development",
+        "prod": "webpack --mode production"
+    },
     "devDependencies": {
         "autoprefixer": "^10.4.5",
         "browser-sync": "^2.27.9",
+        "css-loader": "^6.7.1",
         "cssnano": "^5.1.7",
         "del": "^6.0.0",
         "fibers": "^5.0.1",
@@ -25,10 +32,17 @@
         "gulp-sass": "^5.1.0",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-terser": "^2.1.0",
-        "node-sass": "^7.0.1",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
         "postcss": "^8.4.12",
         "sass": "^1.51.0",
+        "sass-loader": "^12.6.0",
+        "style-loader": "^3.3.1",
         "svgxuse": "^1.2.6",
+        "webpack": "^5.72.1",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.9.0",
         "yargs": "^17.4.1"
-    }
+    },
+    "dependencies": {}
 }

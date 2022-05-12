@@ -1,3 +1,7 @@
+/**
+ * NOTE: No longer in use. Now using Webpack for bundling /compilation / static server
+ */
+
 const gulp = require("gulp");
 const { src, dest, watch, series, parallel } = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
@@ -154,5 +158,5 @@ const prod = gulp.series(
     cacheBuster
 );
 
-exports.dev = dev;
-exports.prod = prod;
+// exports.dev = dev;
+// exports.prod = prod;
