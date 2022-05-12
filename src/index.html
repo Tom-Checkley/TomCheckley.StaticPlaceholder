@@ -454,21 +454,5 @@
             </div>
         </footer>
     </div>
-    <script>
-        var formGroups = [...document.querySelectorAll("[data-form-group]")];
-
-        formGroups.forEach(formGroup => {
-            var input = formGroup.querySelector("[data-form-input]");
-
-            input.addEventListener("focus", (e) => {
-                if (!formGroup.classList.contains("opened")) {
-                    formGroup.classList.add("opened");
-                }
-            });
-        });
-
-
-    </script>
-    <!-- <script src="./assets/js/main.js"></script> -->
 </body>
 </html>
