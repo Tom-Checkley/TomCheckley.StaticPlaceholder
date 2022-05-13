@@ -345,7 +345,7 @@
         </main>
         <footer class="footer">
             <div class="grid grid--footer">
-                <form id="contactForm" action="POST" class="form grid__form grid grid--form">
+                <form id="contactForm" action="POST" class="form grid__form grid grid--form" novalidate>
                     <span class="line grid__line grid__line--v"></span>
                     
                     <div class="grid__heading form__heading">
@@ -409,9 +409,21 @@
                     </span> -->
 
                     <div class="grid__submit form__submit">
-                        <button type="submit" class="button button--secondary">
+                        <button type="submit"
+                                id="contactFormSubmit"
+                                class="button button--secondary g-recaptcha"
+                                data-size="invisible">
                             <span class="button__body">Send</span>
                         </button>
+                    </div>
+
+                    <div class="modal" aria-live="polite" >
+                        <div class="modal__body">
+                            <button class="button button--modal-close modal__button" data-modal-button="">
+                                <span class="button__body">X</span>
+                            </button>
+                            <h1>Thanks for getting in touch. I will get back to you as soon possible</h1>
+                        </div>
                     </div>
                 </form>
 
@@ -454,6 +466,8 @@
             </div>
         </footer>
     </div>
+
     <script type="module" src="./assets/js/main.js"></script>
+
 </body>
 </html>

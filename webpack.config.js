@@ -8,7 +8,7 @@ const config = {
     },
     target: "web",
     output: {
-        filename: env.production ? "[name].bundle/[contenthash].js" : "[name].bundle.js",
+        filename: env.production ? "[name].bundle.[contenthash].js" : "[name].bundle.js",
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
@@ -79,8 +79,6 @@ const config = {
 module.exports = (env, argv) => {
     config.mode = env.production ? "production" : "development";
     config.devtool = env.production ? "source-map" : "eval";
-
-    console.log(config);
 
     return config;
 };
