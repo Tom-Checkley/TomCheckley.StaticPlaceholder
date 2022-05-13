@@ -1,6 +1,9 @@
 # Prtoject Notes & Settings
 _site-details
 
+# Config
+config/
+
 # Logs
 logs
 *.log
