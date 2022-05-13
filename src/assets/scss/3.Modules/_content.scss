@@ -1,13 +1,12 @@
 .content {
     position: relative;
-    // overflow: hidden;
     background: var(--c-bg-alt);
     color: var(--c-text-alt);
 }
 
 .content__heading {    
     position: relative;
-    z-index: 2;
+    z-index: 4;
     padding: var(--s-6);
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -41,24 +40,3 @@
         padding: 0 var(--s-8);
     }
 }
-
-// .content__circle {
-//     position: relative;
-//     display: block;
-// }
-
-// .content__circle--1 {
-//     .circle {
-//         position: sticky;
-//         top: 50%;
-//         left: 0;
-//     }
-// }
-
-// .content__circle--2 {
-//     .circle {
-//         position: sticky;
-//         bottom: 0;
-//         right: 0;
-//     }
-// }

@@ -21,8 +21,7 @@
         "css-loader": "^6.7.1",
         "cssnano": "^5.1.7",
         "del": "^6.0.0",
-        "fibers": "^5.0.1",
-        "firebase": "^9.8.1",
+        "fibers": "^5.0.1",        
         "gulp": "^4.0.2",
         "gulp-concat": "^2.6.1",
         "gulp-imagemin": "7.0.0",
@@ -44,5 +43,7 @@
         "webpack-dev-server": "^4.9.0",
         "yargs": "^17.4.1"
     },
-    "dependencies": {}
+    "dependencies": {
+        "firebase": "^9.8.1"
+    }
 }
