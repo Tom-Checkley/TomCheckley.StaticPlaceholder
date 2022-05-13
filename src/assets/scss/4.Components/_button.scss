@@ -82,3 +82,16 @@
         padding: var(--s-4);
     }
 }
+
+.button--modal-close {
+    --button-color: var(--c-text);
+    --button-bg-color: var(--c-yellow);
+    --button-border-color: var(--c-bg-alt);
+    --button-hover-color: var(--c-text-alt);
+    --button-hover-bg-color: var(--c-bg-alt);
+
+    .button__body {
+        font-size: var(--f-larger);
+        padding: var(--s-4);
+    }
+}

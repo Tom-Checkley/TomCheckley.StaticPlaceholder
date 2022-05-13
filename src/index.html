@@ -417,12 +417,19 @@
                         </button>
                     </div>
 
-                    <div class="modal" aria-live="polite" >
+                    <div class="modal" aria-live="polite" hidden data-modal="">
                         <div class="modal__body">
-                            <button class="button button--modal-close modal__button" data-modal-button="">
-                                <span class="button__body">X</span>
+                            <button type="button=" class="button button--modal-close modal__button" data-modal-button="">
+                                <span class="button__body">
+                                    <svg class="icon">
+                                        <use xlink:href="./assets/icons/symbols.svg#icon--cross"/>
+                                    </svg>
+                                </span>
                             </button>
-                            <h1>Thanks for getting in touch. I will get back to you as soon possible</h1>
+                            <div class="flow">
+                                <h1>Thanks for getting in touch</h1>
+                                <p>I'll get back to you as soon as possible.</p>
+                            </div>
                         </div>
                     </div>
                 </form>

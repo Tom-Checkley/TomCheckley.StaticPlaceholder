@@ -12,13 +12,14 @@ export class ContactFormComponent {
         this.app = initializeApp(config.firebase);
         this.db = getFirestore(this.app);
         this.analytics = getAnalytics(this.app);
-        this.formControls = [...this.el.querySelectorAll("[data-form-control]")];
+        
+        this.formControls = []
     }
 
     init() {
         // this.addRecaptcha();
-
-        this.formControls.forEach(el => {
+        const formControlElements = [...this.el.querySelectorAll("[data-form-control]")];
+        formControlElements.forEach(el => {
             const formControl = new FormControl(el);
             formControl.init();
             this.formControls.push(formControl);
@@ -58,7 +59,22 @@ export class ContactFormComponent {
             const docRef = await addDoc(collection(this.db, "messages"), newMessage)
                 .then(res => {                
                     this.el.reset();
-                    this.formControls.forEach(formControl => formControl.classList.remove("opened"));
+                    console.log(this.formControls);
+                    
+                    this.formControls.forEach(formControl => {
+                        console.log(formControl);
+                        
+                        formControl.el.classList.remove("opened");
+                    });
+
+                    const modal = this.el.querySelector("[data-modal]");
+                    modal.removeAttribute("hidden");
+                    modal.focus();
+                    var closeButton = modal.querySelector("button");
+                    closeButton.addEventListener("click", () => {
+                        modal.setAttribute("hidden", "");
+                    })
+
                 });
 
         } catch (err) {
