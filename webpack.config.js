@@ -78,7 +78,7 @@ const config = {
 
 module.exports = (env, argv) => {
     config.mode = env.production ? "production" : "development";
-    config.devtool = env.production ? "source-map" : "eval";
+    config.devtool = env.production ? "source-map" : "eval-source-map";
 
     return config;
 };
