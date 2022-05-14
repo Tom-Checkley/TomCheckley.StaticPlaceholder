@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, addDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, addDoc } from "firebase/firestore/lite";
 import { getAnalytics } from "firebase/analytics";
 import { config } from "../../../../../config/site-config";
 import { Modal } from "../Modal";
@@ -10,9 +10,7 @@ export class ContactFormComponent {
     constructor(el) {
         this.contactForm = el;
         this.app = initializeApp(config.firebase);
-        this.db = getFirestore(this.app);
-        this.analytics = getAnalytics(this.app);
-        
+        this.db = getFirestore(this.app);        
         this.formControls = []
     }
 
@@ -32,6 +30,7 @@ export class ContactFormComponent {
         const modalEl = this.contactForm.querySelector("[data-modal]");
         if (modalEl) {
             this.modal = new Modal(modalEl);
+            this.modal.init();
         }
     }
 
@@ -64,12 +63,9 @@ export class ContactFormComponent {
             const docRef = await addDoc(collection(this.db, "messages"), newMessage)
                 .then(res => {                
                     this.contactForm.reset();
-                    console.log(this.formControls);
                     
-                    this.formControls.forEach(formControl => {
-                        console.log(formControl);
-                        
-                        formControl.el.classList.remove("opened");
+                    this.formControls.forEach(formControl => {                        
+                        formControl.hideInput();
                     });
 
                     if (this.modal) {

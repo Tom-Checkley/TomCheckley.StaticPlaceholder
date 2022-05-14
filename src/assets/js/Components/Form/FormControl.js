@@ -18,4 +18,8 @@ export class FormControl {
     showInput() {
         this.formControl.classList.add("opened");
     }
+
+    hideInput() {
+        this.formControl.classList.remove("opened");
+    }
 }

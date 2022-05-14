@@ -2,6 +2,10 @@
     position: relative;
     background: var(--c-bg-alt);
     color: var(--c-text-alt);
+
+    p {
+        font-weight: 600;
+    }
 }
 
 .content__heading {    
