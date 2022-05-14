@@ -7,5 +7,10 @@ export class Modal {
 
     open() {
         this.modal.removeAttribute("hidden");
+        this.modal.focus();
+    }
+
+    close() {
+        this.modal.setAttribute("hidden");
     }
 }

@@ -30,7 +30,9 @@ export class ContactFormComponent {
         })
 
         const modalEl = this.contactForm.querySelector("[data-modal]");
-        this.modal = new Modal(modalEl);
+        if (modalEl) {
+            this.modal = new Modal(modalEl);
+        }
     }
 
     async submit(e) {
@@ -70,7 +72,9 @@ export class ContactFormComponent {
                         formControl.el.classList.remove("opened");
                     });
 
-                    
+                    if (this.modal) {
+                        this.modal.open();
+                    }
 
                 });
 
