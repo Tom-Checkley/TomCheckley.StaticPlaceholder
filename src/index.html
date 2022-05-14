@@ -345,7 +345,7 @@
         </main>
         <footer class="footer">
             <div class="grid grid--footer">
-                <form id="contactForm" action="POST" class="form grid__form grid grid--form">
+                <form id="contactForm" action="POST" class="form grid__form grid grid--form" novalidate>
                     <span class="line grid__line grid__line--v"></span>
                     
                     <div class="grid__heading form__heading">
@@ -409,10 +409,30 @@
                     </span> -->
 
                     <div class="grid__submit form__submit">
-                        <button type="submit" class="button button--secondary">
+                        <button type="submit"
+                                id="contactFormSubmit"
+                                class="button button--secondary g-recaptcha"
+                                data-size="invisible">
                             <span class="button__body">Send</span>
                         </button>
                     </div>
+
+                    <!-- <div id="formModal" class="modal" aria-live="polite" hidden data-modal="">
+                        <div class="modal__mask" data-modal-mask=""></div>
+                        <div class="modal__body">
+                            <button type="button=" class="button button--modal-close modal__button" data-modal-close-button="">
+                                <span class="button__body">
+                                    <svg class="icon">
+                                        <use xlink:href="./assets/icons/symbols.svg#icon--cross"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="flow">
+                                <h1>Thanks for getting in touch</h1>
+                                <p>I'll get back to you as soon as possible.</p>
+                            </div>
+                        </div>
+                    </div> -->
                 </form>
 
                 <div class="footer__social-media grid__social">
@@ -454,6 +474,8 @@
             </div>
         </footer>
     </div>
+
     <script type="module" src="./assets/js/main.js"></script>
+
 </body>
 </html>
