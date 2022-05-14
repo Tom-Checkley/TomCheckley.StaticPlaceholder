@@ -1,21 +1,21 @@
 export class FormControl {
 
     constructor(el) {
-        this.el = el;
-        this.model = JSON.parse(this.el.dataset.formControl);
+        this.formControl = el;
+        this.model = JSON.parse(this.formControl.dataset.formControl);
         this.input;
     }
 
     init() {
         if (this.model.input === "textarea") {
-            this.input = this.el.querySelector("textarea");
+            this.input = this.formControl.querySelector("textarea");
         } else {
-            this.input = this.el.querySelector("input");
+            this.input = this.formControl.querySelector("input");
         }
         this.input.addEventListener("focus", e =>  this.showInput());
     }
 
     showInput() {
-        this.el.classList.add("opened");
+        this.formControl.classList.add("opened");
     }
 }
