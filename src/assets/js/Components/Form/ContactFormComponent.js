@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, addDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, addDoc } from "firebase/firestore/lite";
 import { getAnalytics } from "firebase/analytics";
 import { config } from "../../../../../config/site-config";
 import { Modal } from "../Modal";
@@ -10,9 +10,7 @@ export class ContactFormComponent {
     constructor(el) {
         this.contactForm = el;
         this.app = initializeApp(config.firebase);
-        this.db = getFirestore(this.app);
-        this.analytics = getAnalytics(this.app);
-        
+        this.db = getFirestore(this.app);        
         this.formControls = []
     }
 
@@ -32,6 +30,7 @@ export class ContactFormComponent {
         const modalEl = this.contactForm.querySelector("[data-modal]");
         if (modalEl) {
             this.modal = new Modal(modalEl);
+            this.modal.init();
         }
     }
 
@@ -54,32 +53,41 @@ export class ContactFormComponent {
 
         const newMessage = {
             posted: posted,
-            name: formData.get("name"),
-            email: formData.get("email"),
-            phone: formData.get("phone"),
-            message: formData.get("message")
+            name: formData.get("name").trim(),
+            email: formData.get("email").trim(),
+            phone: formData.get("phone").trim(),
+            message: formData.get("message").trim()
         };
 
-        try {            
-            const docRef = await addDoc(collection(this.db, "messages"), newMessage)
-                .then(res => {                
-                    this.contactForm.reset();
-                    console.log(this.formControls);
-                    
-                    this.formControls.forEach(formControl => {
-                        console.log(formControl);
+        let isFormValid = true;
+
+        this.formControls.forEach(formControl => {
+            const isValid = formControl.isValid();
+
+            if (!isValid) {
+                isFormValid = false;
+            }
+        })
+
+        if (isFormValid) {
+            try {            
+                const docRef = await addDoc(collection(this.db, "messages"), newMessage)
+                    .then(res => {                
+                        this.contactForm.reset();
                         
-                        formControl.el.classList.remove("opened");
+                        this.formControls.forEach(formControl => {                        
+                            formControl.hideInput();
+                        });
+    
+                        if (this.modal) {
+                            this.modal.open();
+                        }
+    
                     });
-
-                    if (this.modal) {
-                        this.modal.open();
-                    }
-
-                });
-
-        } catch (err) {
-            console.error("Something went wrong posting message: " + err);
+    
+            } catch (err) {
+                console.error("Something went wrong posting message: " + err);
+            }
         }
     }
 }
