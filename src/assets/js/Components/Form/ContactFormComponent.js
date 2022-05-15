@@ -53,29 +53,41 @@ export class ContactFormComponent {
 
         const newMessage = {
             posted: posted,
-            name: formData.get("name"),
-            email: formData.get("email"),
-            phone: formData.get("phone"),
-            message: formData.get("message")
+            name: formData.get("name").trim(),
+            email: formData.get("email").trim(),
+            phone: formData.get("phone").trim(),
+            message: formData.get("message").trim()
         };
 
-        try {            
-            const docRef = await addDoc(collection(this.db, "messages"), newMessage)
-                .then(res => {                
-                    this.contactForm.reset();
-                    
-                    this.formControls.forEach(formControl => {                        
-                        formControl.hideInput();
+        let isFormValid = true;
+
+        this.formControls.forEach(formControl => {
+            const isValid = formControl.isValid();
+
+            if (!isValid) {
+                isFormValid = false;
+            }
+        })
+
+        if (isFormValid) {
+            try {            
+                const docRef = await addDoc(collection(this.db, "messages"), newMessage)
+                    .then(res => {                
+                        this.contactForm.reset();
+                        
+                        this.formControls.forEach(formControl => {                        
+                            formControl.hideInput();
+                        });
+    
+                        if (this.modal) {
+                            this.modal.open();
+                        }
+    
                     });
-
-                    if (this.modal) {
-                        this.modal.open();
-                    }
-
-                });
-
-        } catch (err) {
-            console.error("Something went wrong posting message: " + err);
+    
+            } catch (err) {
+                console.error("Something went wrong posting message: " + err);
+            }
         }
     }
 }

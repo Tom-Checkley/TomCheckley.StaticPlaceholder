@@ -18,8 +18,6 @@ export class Modal {
     }
 
     close() {
-        console.log(this.modal);
-        
         this.modal.setAttribute("hidden", "hidden");
     }
 }

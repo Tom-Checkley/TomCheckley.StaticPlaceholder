@@ -353,12 +353,15 @@
                     </div>
 
                     <div class="grid__form-group grid__form-group--1">
-                        <div class="form__control" data-form-control='{"input": "input", "name": "text"}'>
-                            <label for="name" class="form__label">Name<sup class="form__required-indicator">*</sup></label>
+                        <div class="form__control" data-form-control='{"input": "input", "type": "text", "name": "text"}'>
+                            <label for="name" class="form__label">
+                                <span class="label__text">Name</span>
+                                <sup class="form__required-indicator">*</sup>
+                            </label>
                             <span class="form__input form__input--text">
                                 <input type="text" id="name" name="name" required>
                             </span>
-                            <span class="form__validation-error-message" hidden="">Please enter your name</span>
+                            <span class="form__validation-error-message" data-input-validation-message="" hidden="">Please enter your name</span>
                         </div>
                     </div>
 
@@ -367,12 +370,15 @@
                     </span>
 
                     <div class="grid__form-group grid__form-group--2">
-                        <div class="form__control" data-form-control='{"input": "input", "name": "email"}'>
-                            <label for="email" class="form__label">Email<sup class="form__required-indicator">*</sup></label>
+                        <div class="form__control" data-form-control='{"input": "input", "type": "email", "name": "email"}'>
+                            <label for="email" class="form__label">
+                                <span class="label__text">Email</span>
+                                <sup class="form__required-indicator">*</sup>
+                            </label>
                             <span class="form__input form__input--text">
                                 <input type="email" id="email" name="email" required>
                             </span>
-                            <span class="form__validation-error-message" hidden="">Please enter your email</span>
+                            <span class="form__validation-error-message" data-input-validation-message="" hidden="">Please enter your email</span>
                         </div>
                     </div>
 
@@ -381,12 +387,14 @@
                     </span>
 
                     <div class="grid__form-group grid__form-group--3">
-                        <div class="form__control" data-form-control='{"input": "input", "name": "phone"}'>
-                            <label for="phone" class="form__label">Phone number</label>
+                        <div class="form__control" data-form-control='{"input": "input", "type": "phone", "name": "phone"}'>
+                            <label for="phone" class="form__label">
+                                <span class="label__text">Phone number</span>
+                            </label>
                             <span class="form__input form__input--text">
                                 <input type="phone" id="phone" name="phone">
                             </span>
-                            <span class="form__validation-error-message" hidden="">Please enter a valid phone number</span>
+                            <span class="form__validation-error-message" data-input-validation-message="" hidden="">Please enter a valid phone number</span>
                         </div>
                     </div>
 
@@ -395,12 +403,15 @@
                     </span>
 
                     <div class="grid__form-group grid__form-group--4">
-                        <div class="form__control" data-form-control='{"input": "textarea", "name": "message"}'>
-                            <label for="message" class="form__label">Message<sup class="form__required-indicator">*</sup></label>
+                        <div class="form__control" data-form-control='{"input": "textarea", "type": "null", "name": "message"}'>
+                            <label for="message" class="form__label">
+                                <span class="label__text">Message</span>
+                                <sup class="form__required-indicator">*</sup>
+                            </label>
                             <span class="form__input form__input--textarea">
                                 <textarea id="message" name="message" columns="8" rows="10" required></textarea>
                             </span>
-                            <span class="form__validation-error-message" hidden="">Please enter a message</span>
+                            <span class="form__validation-error-message" data-input-validation-message="" hidden="">Please enter a message</span>
                         </div>
                     </div>
 
