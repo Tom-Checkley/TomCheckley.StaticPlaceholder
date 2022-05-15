@@ -20,13 +20,13 @@
         --grid-spacing-v: #{rem(82)};
 
         grid-template-columns:  1px
-                                1fr
+                                .75fr
                                 rem($line-thickness)
                                 auto
                                 rem($line-thickness)
                                 minmax(rem(300), 3fr)
                                 rem($line-thickness) 
-                                1fr
+                                .75fr
                                 1px;
 
         grid-template-rows: 1px
