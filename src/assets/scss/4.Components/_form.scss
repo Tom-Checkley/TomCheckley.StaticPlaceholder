@@ -1,4 +1,9 @@
+.form {
+    font-weight: 600;
+}
+
 .form__heading {
+    font-weight: 700;
     font-size: var(--f-x-large);
     margin-top: var(--s-7)
 }
@@ -47,6 +52,10 @@
             transform: scale(1);
             outline: none;
         }
+
+        .invalid & {
+            outline: 3px solid var(--c-red);
+        }
     }
 }
 .form__input--text {
@@ -63,8 +72,7 @@
 .form__required-indicator {
     position: relative;
     color: var(--c-red);
-    padding: 0 rem(4);
-    margin-top: rem(3);
+    // margin-top: rem(3);
     line-height: 1;
     display: inline-flex;
     align-items: center;
@@ -79,12 +87,12 @@
         transform: translateX(100%) scale(0);
         transition: transform .2s linear;
         transform-origin: left;
-        padding: var(--s-1);
         background: var(--c-grey);
         color: var(--c-text);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         &::after {
             transform: translateX(100%) scale(1);
         }
@@ -93,6 +101,11 @@
 
 .form__validation-error-message {
     color: var(--c-red);
+
+    span {
+        margin-top: var(--s-1);
+        display: block;
+    }
 }
 
 .form__submit {

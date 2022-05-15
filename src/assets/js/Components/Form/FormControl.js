@@ -15,6 +15,8 @@ export class FormControl {
             this.input = this.formControl.querySelector("input");
         }
         this.input.addEventListener("focus", e =>  this.showInput());
+
+        this.input.addEventListener("blur", e => this.isValid());
     }
 
     showInput() {
@@ -65,8 +67,6 @@ export class FormControl {
     isValidRequired(val) {
         if (!val && this.isRequired()) {
             const label = this.formControl.querySelector(".label__text");
-            console.log(label);
-            
             this.validationErrorMessage += `<span>The ${label.innerText} field is required.</span>`;
             return false;
         }
