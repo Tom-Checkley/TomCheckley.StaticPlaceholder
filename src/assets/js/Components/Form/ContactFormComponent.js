@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, addDoc } from "firebase/firestore/lite";
-import { getAnalytics } from "firebase/analytics";
+import { getFirestore, collection, addDoc } from "firebase/firestore/lite";
 import { config } from "../../../../../config/site-config";
 import { Modal } from "../Modal";
 import { FormControl } from "./FormControl";
