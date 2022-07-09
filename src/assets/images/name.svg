@@ -1,0 +1,32 @@
+<svg id="name" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460 280" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <text id="name-s-text1" dx="0" dy="0" font-family="&quot;name:::Baumans&quot;" font-size="120" font-weight="400" transform="translate(3.563004 122.268242)"  stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter">
+        <tspan id="name-s-tspan1" y="0" font-weight="400" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter"><![CDATA[Tom]]></tspan>
+        <tspan id="name-s-tspan2" x="0" y="120" font-weight="400" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter"><![CDATA[Checkley]]></tspan>
+    </text>
+    <style><![CDATA[@font-face {font-family: 'name:::Baumans';font-style: normal;font-weight: 400;src: url(https://fonts.gstatic.com/l/font?kit=-W_-XJj9QyTd3QfpR_oqZWNoL_ZAHkldj2tn&skey=34ab2ddaf19de28&v=v17) format('truetype');}]]></style>
+    <style>
+    #name {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        animation: draw 3s linear forwards;
+        fill: rgba(0,0,0,0);
+        
+    }
+
+    @keyframes draw {
+        0% {
+            stroke-dashoffset: 500;
+        }
+        75% {
+            fill: rgba(0,0,0,0);
+        }
+        80% {
+            stroke-dashoffset: 0;
+        }
+        100% {
+            stroke-dashoffset: 0;
+            fill: rgba(0,0,0,1);
+        }
+    }
+    </style>
+</svg>

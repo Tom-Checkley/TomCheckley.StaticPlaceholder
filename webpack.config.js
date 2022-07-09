@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 const { env } = require("process");
 
@@ -17,6 +18,16 @@ const config = {
             title: "Tom Checkley",
             template: "src/index.html",
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: "./src/assets/images/**.*",
+                    to({context, absoluteFilename}) {
+                        return "assets/images/[name].[ext]";
+                    }
+                }
+            ]
+        })
     ],
     devServer: {
         static: "./dist",
