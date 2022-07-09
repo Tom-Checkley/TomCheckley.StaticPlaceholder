@@ -23,7 +23,7 @@ const config = {
                 {
                     from: "./src/assets/images/**.*",
                     to({context, absoluteFilename}) {
-                        return "assets/images/[name].[ext]";
+                        return "assets/images/[name][ext]";
                     }
                 }
             ]
