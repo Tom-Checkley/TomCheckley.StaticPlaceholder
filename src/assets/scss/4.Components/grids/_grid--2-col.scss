@@ -1,0 +1,4 @@
+.grid--2-col {
+    gap: var(--s-6);
+    grid-template-columns: repeat(auto-fit, minmax(#{rem(280)}, 1fr));
+}
