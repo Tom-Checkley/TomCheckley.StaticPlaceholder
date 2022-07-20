@@ -1,6 +1,6 @@
 # TomCheckley.StaticPlaceholder
 
-Static placeholder page while site is being built.
+Static placeholder page while my new [Umbraco/Angular site](https://github.com/Tom-Checkley/Website.2022) is being built.
 
 ## FE Set Up
 
@@ -11,16 +11,20 @@ In console run:
 
 ## Dev
 
-Run dev server with BrowserSync, auto compile Sass & JS
+~~Run dev server with BrowserSync, auto compile Sass & JS~~
 
-- `gulp dev`
+- ~~`gulp dev`~~
 
-Flags:
-- `--open` Opens in default browser
-- `--port [port number]` Defaults to 3000
+Switched to Webpack
+- `yarn run start`
+
+~~Flags:~~
+~~- `--open` Opens in default browser~~
+~~- `--port [port number]` Defaults to 3000~~
 
 ## Production
 
 Minify CSS & JS, updates cachebuster in script and link tags. Copies to dist directory
 
-- `gulp prod`
+- ~~`gulp prod`~~
+- `yarn run prod`
