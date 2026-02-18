@@ -1,15 +1,15 @@
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore/lite";
-import { config } from "../../../../../config/site-config";
+
 import { Modal } from "../Modal";
 import { FormControl } from "./FormControl";
 
 export class ContactFormComponent {
 
-    constructor(el) {
+    constructor(el, firebaseApp) {
         this.contactForm = el;
-        this.app = initializeApp(config.firebase);
-        this.db = getFirestore(this.app);        
+        this.app = firebaseApp;
+        this.db = getFirestore(this.app);
         this.formControls = []
     }
 

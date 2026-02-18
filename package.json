@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "Static holding page whilst the main site is under construction",
     "main": "main.js",
-    "private": "true",
+    "private": "false",
     "repository": "https://github.com/Tom-Checkley/TomCheckley.UnderConstruction.git",
     "author": "Tom Checkley",
     "license": "MIT",
     "engines": {
-        "node": "^14.18.1"
+        "node": "^19.2.0"
     },
     "scripts": {
         "start": "webpack serve --open",
